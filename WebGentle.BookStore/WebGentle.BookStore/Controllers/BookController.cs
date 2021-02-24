@@ -3,14 +3,30 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebGentle.BookStore.Models;
+using WebGentle.BookStore.Repository;
 
 namespace WebGentle.BookStore.Controllers
 {
     public class BookController : Controller
     {
-        public string FindBooks(string author, string bookName)
+        private BookRepository _repo;
+        public BookController()
         {
-            return $"author:{author}, Book Name:{bookName}";
+            _repo = new BookRepository();
+        }
+        public List<BookModel> GetAllBooks()
+        {
+            return _repo.GetAllBooks();
+        }
+
+        public BookModel GetBookById(long id)
+        {
+            return _repo.GetBookById(id);
+        }
+        public List<BookModel> SearchBooks(string title, string author)
+        {
+            return _repo.SearchBooks(title, author);
         }
     }
 }

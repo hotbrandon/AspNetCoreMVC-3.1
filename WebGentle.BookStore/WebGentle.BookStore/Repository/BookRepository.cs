@@ -15,7 +15,7 @@ namespace WebGentle.BookStore.Repository
             return DataSource().Find(x => x.Id == id);
         }
         public List<BookModel> SearchBooks(string title, string author) {
-            return DataSource().Where(x => x.Title.Contains(title) && x.Author.Contains(author)).ToList();
+            return DataSource().Where(x => x.Title.Contains(title) || x.Author.Contains(author)).ToList();
         }
         private List<BookModel> DataSource()
         {
