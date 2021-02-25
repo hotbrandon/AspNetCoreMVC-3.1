@@ -15,9 +15,10 @@ namespace WebGentle.BookStore.Controllers
         {
             _repo = new BookRepository();
         }
-        public List<BookModel> GetAllBooks()
+        public ViewResult GetAllBooks()
         {
-            return _repo.GetAllBooks();
+            var books =_repo.GetAllBooks();
+            return View(books);
         }
 
         public BookModel GetBookById(long id)

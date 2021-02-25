@@ -1,0 +1,22 @@
+﻿
+@{
+    Layout = "_Layout";
+    var books = Model;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>All Books</title>
+</head>
+<body>
+    <div class="container">
+        @foreach (var book in books)
+        {
+            <p>@book.Title by @book.Author</p>
+        }
+    </div>
+</body>
+</html>
