@@ -13,9 +13,9 @@ namespace WebGentle.BookStore.Controllers
             return View();
         }
 
-        public ViewResult AboutUs()
+        public ViewResult About()
         {
-            return View();
+            return View("AboutUs");
         }
     }
 }
