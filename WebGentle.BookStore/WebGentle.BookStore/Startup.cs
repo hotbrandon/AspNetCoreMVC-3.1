@@ -36,7 +36,7 @@ namespace WebGentle.BookStore
             //    await next();
             //    await context.Response.WriteAsync("message from custom middleware, outgoing<br>");
             //});
-
+            app.UseStaticFiles();
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
