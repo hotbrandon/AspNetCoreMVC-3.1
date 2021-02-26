@@ -21,13 +21,20 @@ namespace WebGentle.BookStore.Controllers
             return View(books);
         }
 
-        public BookModel GetBookById(long id)
+        public ViewResult GetBook(long id)
         {
-            return _repo.GetBookById(id);
+            var book = _repo.GetBookById(id);
+            return View(book);
         }
-        public List<BookModel> SearchBooks(string title, string author)
+        public ViewResult SearchBooks(string title, string author)
         {
-            return _repo.SearchBooks(title, author);
+            var books = _repo.SearchBooks(title, author);
+            return View(books);
+        }
+
+        public ViewResult AddBook()
+        {
+            return View();
         }
     }
 }

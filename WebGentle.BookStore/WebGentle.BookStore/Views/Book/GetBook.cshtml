@@ -1,0 +1,37 @@
+﻿@using WebGentle.BookStore.Models
+@model BookModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var book = Model;
+}
+<div class="container">
+    <h1>Book Detail</h1>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="https://picsum.photos/400" class="img-thumbnail"/>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>@book.Title</h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 text-primary">
+                    <p>@book.Author</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p>@book.Detail</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
